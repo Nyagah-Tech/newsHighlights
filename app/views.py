@@ -7,7 +7,8 @@ def index():
     '''
     this is a view function thats responsible for returning the index page and its data
     '''
-    return render_template('index.html')
+    title = " The News Highlight apllication "
+    return render_template('index.html',title = title)
 
 @app.route('/newsSrc/<int:source_id>')
 def newSource(source_id):
