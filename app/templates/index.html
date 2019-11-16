@@ -1,4 +1,4 @@
-
+{% import 'macros.html' as macro%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,8 +17,14 @@
 
 <body>
 
-    <h1>The news highlights application</h1>  
-      
+    <h1>The news highlights application</h1> 
+    <h3>here are our news sources</h3>
+    <ul>
+        <li>
+            {{macro.displayNewSrcList(srcNews)}}
+        </li>
+    </ul> 
+
 </body>
 
 </html>

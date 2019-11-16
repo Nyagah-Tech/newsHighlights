@@ -1,0 +1,5 @@
+{% macro displayNewSrcList(sourceList) %}
+    {% for  newshub in sourceList %}
+        <li>{{newshub.name}}</li>
+    {% endfor %}
+{% endmacro %}
