@@ -1,9 +1,9 @@
 class Config:
-    '''
+    '''NEWS_API_BASE_URL 
     this are general configuration for the parent class
     '''
 
-    NEWS_API_BASE_URL = 'https://newsapi.org/v2/{}?apiKey={}'
+    = 'https://newsapi.org/v2/{}?apiKey={}'
 
     pass
 
