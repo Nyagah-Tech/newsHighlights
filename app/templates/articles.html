@@ -67,14 +67,17 @@
         
         <div class ="row">
             {% for article in articles %}
+            
             <div class="col-md-3">
                 <div class="card">
                     <div class="card-body">
                         
-                        <b>{{article.title}}</b>
+                        <b>Title:: {{article.title}}</b>
+                        <hr>
                         <img src="{{article.urlToImage}}" class="img-responsive" alt="poster" height= "200px" width="250px">
-                        {{article.description}}
-                        <p>This news article was published at {{article.publishedAt}}</p>
+                        <p>{{article.description}}</p>
+                        <hr>
+                        <p>This news article was published on ::: {{article.publishedAt}}</p>
                         <br>
                     </div>
                     <div class="card-footer">
