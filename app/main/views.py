@@ -1,9 +1,9 @@
-from flask import render_template
-from app import app
-from .request import get_newsSource,get_sourceArticle,top_head
+from flask import render_template,url_for
+from . import main 
+from ..request import get_newsSource,get_sourceArticle,top_head
 
 #views
-@app.route('/')
+@main.route('/')
 def index():
     '''
     this is a view function thats responsible for returning the index page and its data
@@ -18,7 +18,7 @@ def index():
 
     return render_template( 'index.html',title = title,topHeads = top_headline,srcNews = news_sources)
 
-@app.route('/articles/<source_id>')
+@main.route('/articles/<source_id>')
 def sourceArticles(source_id):
     '''
     this view function returns the news articles that are in particular news source

@@ -11,7 +11,7 @@ h1{
     transform: scale(1.01);
 }
 body{
-    background-color: rgb(58, 55, 55);
+    background-color: black;
 }
 .card {
     transition: all .6s ease-in-out;
@@ -39,4 +39,17 @@ body{
     overflow: auto;
     position: absolute;
     right: 12%;
+}
+#about{
+    margin-top:60%;
+}
+#down{
+    margin-top: 60px;
+    font-size:35px;
+}
+#contact{
+    margin-top: 20%;
+}
+#con{
+    font-size: 35px;
 }

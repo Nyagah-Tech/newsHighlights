@@ -6,13 +6,16 @@
     transform: scale(1.01);
 }
 body{
-    
+    background-image: url(https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fgetwallpapers.com%2Fwallpaper%2Ffull%2Fd%2F9%2F9%2F1186081-download-free-dark-blue-moon-wallpaper-1920x1080-high-resolution.jpg&f=1&nofb=1);
+   
 }
 .card {
     transition: all .6s ease-in-out;
     max-height: 450px;
     width: 300px;
     overflow: auto;
+    color: silver;
+    font-family: 'Niconne', cursive;
     font-size: 25px;
     margin-top: 40px;
 }
@@ -20,7 +23,7 @@ body{
     margin-left : 4px;
 }
 .card-body{
-    background-color: whitesmoke;
+    background-color: black;
 
 }
 .cont{
