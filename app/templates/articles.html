@@ -1,0 +1,84 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/article.css')}}">
+
+    
+    <title>Document</title>
+    <style>
+        ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color:skyblue;
+        /* position: -webkit-sticky; Safari */
+        /* position: sticky; */
+        top: 0;
+        }
+
+        li {
+        float: left;
+        }
+
+        li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 40px 30px;
+        text-decoration: none;
+        }
+
+        li a:hover {
+        background-color: #111;
+        }
+
+        .active {
+        background-color: whitesmoke;
+        }
+    </style>
+    
+</head>
+<body>
+
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+    </ul>
+    <br><br>
+    <div class = "cont">
+        
+        <div class ="row">
+            {% for article in articles %}
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        
+                        <b>{{article.title}}</b>
+                        <img src="{{article.urlToImage}}" class="img-responsive" alt="poster" height= "200px" width="250px">
+                        {{article.description}}
+                        <p>This news article was published at {{article.publishedAt}}</p>
+                        <br>
+                    </div>
+                    <div class="card-footer">
+                        <a href="{{article.url}}">read more....</a>
+                        </div>
+                    
+                  
+                </div>
+
+            </div>
+            {% endfor%}
+        </div>
+    </div>
+    
+</body>
+</html>

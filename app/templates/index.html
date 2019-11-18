@@ -1,29 +1,183 @@
-{% import 'macros.html' as macro%}
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    {% if title %}
-        <title> {{title}} </title>
-    {% else %}
-        <title>
-            Welcome to the News-Highlight Application.
-        </title>
-    {% endif %}
+<html>
 
+<head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Niconne|PT+Serif+Caption|Philosopher|Bowlby+One+SC&display=swap"
+                rel="stylesheet">
+        <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.css')}}">
+        <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+
+
+        <style>
+                h1 {
+                        color: rgb(223, 211, 211);
+                        font-size: 90px;
+                        font-family: 'PT Serif Caption', serif;
+                }
+
+                .dropbtn {
+                        background-color: rgba(78, 13, 13, 0.719);
+                        color: white;
+                        padding: 16px;
+                        font-size: 21px;
+                        border: none;
+                        font-family: 'Philosopher', sans-serif;
+                }
+
+                .dropdown {
+                        position: relative;
+                        display: inline-block;
+
+                }
+
+                .dropdown-content {
+                        display: none;
+                        position: absolute;
+                        background-color: transparent;
+                        min-width: 260px;
+                        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                        z-index: 1;
+
+                }
+
+                .dropdown-content a {
+                        color: silver;
+                        font-family: 'Philosopher', sans-serif;
+                        font-size: 20px;
+                        padding: 13px 11px;
+                        text-decoration: none;
+                        display: block;
+
+                }
+
+                .dropdown-content a:hover {
+                        background-color: black;
+                }
+
+                .dropdown:hover .dropdown-content {
+                        display: block;
+                }
+
+                .dropdown:hover .dropbtn {
+                        background-color: grey;
+                }
+
+                ul {
+                        list-style-type: none;
+                        margin: 0;
+                        padding: 0;
+                        overflow: hidden;
+                        background-color: black;
+                        /* position: -webkit-sticky; Safari */
+                        /* position: sticky; */
+                        top: 0;
+                }
+
+                li {
+                        float: left;
+                }
+
+                li a {
+                        display: block;
+                        color: white;
+                        text-align: center;
+                        font-family: 'Philosopher', sans-serif;
+                        padding: 20px 16px;
+                        text-decoration: none;
+                }
+
+                li a:hover {
+                        background-color: #111;
+                }
+
+                .active {
+                        background-color: whitesmoke;
+                }
+
+                body {
+                        background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapertag.com%2Fwallpaper%2Ffull%2F7%2F1%2F1%2F869124-dark-blue-backgrounds-1920x1200-lockscreen.jpg&f=1&nofb=1)
+                }
+
+                p {
+                        color: white;
+                        font-family: 'Niconne', cursive;
+                        transform: translate(-10%);
+                        font-family: 'Philosopher', sans-serif;
+                        font-size: 28px;
+                }
+
+                #froyo {
+                        background-color: transparent;
+
+                }
+        </style>
 </head>
 
 <body>
 
-    <h1>The news highlights application</h1> 
-    <h3>here are our news sources</h3>
-    <ul>
-        <li>
-            {{macro.displayNewSrcList(srcNews)}}
-        </li>
-    </ul> 
+        <ul>
+                <li style="color: white; font-size: 22px; font-family: 'Philosopher', sans-serif;"><a>AllNews</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about">About</a></li>
+        </ul>
+        <br><br>
+
+        <div class="row">
+                <div class="col-sm-4">
+                        <div id="hei">
+                                <div class="dropdown">
+                                        <button class="dropbtn">News_Sources</button>
+                                        <div class="dropdown-content">
+                                                {% for news in srcNews %}
+                                                <a href="/articles/{{news.id}}">{{news.name}}</a>
+                                                {% endfor%}
+
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+
+                <div class="col-sm-8">
+
+                        <div class="container">
+                                <h1>Top-Headlines...</h1><br>
+                                <p>~The best news network in the world.Welcome to AllNews~</p><br><br>
+                                <div id="card">
+
+                                        <div class="row">
+                                                {% for headline in topHeads %}
+                                                <div class="col-md-4">
+                                                        <div class="card">
+                                                                <div class="card-body">
+                                                                        <h3>{{headline.name}}</h3>
+                                                                        <b>{{headline.title}}</b>
+                                                                        <img src="{{headline.urlToImage}}"
+                                                                                class="img-responsive" alt="poster"
+                                                                                height="200px" width="250px">
+                                                                        {{headline.description}}
+                                                                        <p>This news article was published at
+                                                                                {{headline.publishedAt}}</p>
+                                                                        <br>
+                                                                </div>
+                                                                <div class="card-footer">
+                                                                        <a href="{{headline.url}}">read more....</a>
+                                                                </div>
+
+                                                        </div>
+
+                                                </div>
+                                                {% endfor%}
+                                        </div>
+                                </div>
+
+                        </div>
+                </div>
+
+        </div>
+
+
 
 </body>
 

@@ -1,0 +1,33 @@
+{% extends 'bootstrap/base.html'%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    {% if title %}
+        <title> {{title}} </title>
+    {%else%}
+        <title> The News Highlight</title>
+    {%endif%}
+</head>
+<body>
+    <!-- navigation bar -->
+    {% block navbar %}
+        {% include 'nav.html' %}
+    {% endblock %}
+
+
+    <!-- content -->
+    {% block content %}
+
+    {% endblock%}
+</body>
+</html>
+
+
+
+
+

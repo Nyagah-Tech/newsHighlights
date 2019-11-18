@@ -1,5 +1,51 @@
 {% macro displayNewSrcList(sourceList) %}
     {% for  newshub in sourceList %}
-        <li>{{newshub.name}}</li>
+    <!-- <div class = "container"> -->
+        <!-- <div class="row"> -->
+            <div class=" col-sm-3  source-card">
+                <div class = "container">
+                    <div class="card-deck">
+                        <div class="card-body">
+                                <h3>{{newshub.name}}</h3>
+                            </div>
+                            <div class="card-footer">
+                                <a href="/articles/{{newshub.id}}">
+                                <p>Read {{newshub.name}} news articles...</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- <div class="card"> -->
+                    
+                <!-- </div> -->
+            
+        <!-- </div> -->
+    <!-- </div> -->
+        
+<!-- <li>{{newshub.name}}  {{ newshub.id}}</li>*** -->
+    {% endfor %}
+{% endmacro %}
+
+{% macro displayArticles(articleList)%}
+    {% for article in articleList %}
+        <!-- <div class="row"> -->
+            <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 article-card"height="850px">
+                <div class="card" >
+                    <div class="card-header"> 
+                        {{article.title}}
+                    </div>
+                    <div class="card-body">
+                        <img src="{{article.urlToImage}}" class="img-responsive" alt="poster">
+                    </div>
+                    <div class="card-footer">
+                        <p>{{article.publishedAt}}</p>
+                        <a href="{{article.url}}">click to read more about the artcle </a>
+                    </div>
+                </div>
+            </div>
+        <!-- </div>     -->
+        
     {% endfor %}
 {% endmacro %}

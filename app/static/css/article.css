@@ -1,0 +1,28 @@
+
+
+.card:hover{
+    -ms-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.01);
+}
+body{
+    
+}
+.card {
+    transition: all .6s ease-in-out;
+    max-height: 450px;
+    width: 300px;
+    overflow: auto;
+    font-size: 25px;
+    margin-top: 40px;
+}
+.col-sm-3{
+    margin-left : 4px;
+}
+.card-body{
+    background-color: whitesmoke;
+
+}
+.cont{
+    padding: 30px;
+}
