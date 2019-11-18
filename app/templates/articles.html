@@ -18,30 +18,38 @@
         margin: 0;
         padding: 0;
         overflow: hidden;
-        background-color:skyblue;
+        background-color:black;
         /* position: -webkit-sticky; Safari */
         /* position: sticky; */
         top: 0;
         }
 
-        li {
-        float: left;
+        li a{
+        float: right;
         }
 
         li a {
         display: block;
         color: white;
         text-align: center;
-        padding: 40px 30px;
+        font-family: 'Niconne', cursive;
+        font-size: 26px;
+        padding: 20px 10px;
         text-decoration: none;
         }
 
         li a:hover {
-        background-color: #111;
+        background-color: rgba(78, 40, 40, 0.856);
         }
 
         .active {
         background-color: whitesmoke;
+        }
+        #tea{
+            color: white; 
+            font-size: 26px; 
+            font-family: 'PT Serif Caption', serif;
+            transform: translate(0%,50%)
         }
     </style>
     
@@ -49,6 +57,7 @@
 <body>
 
     <ul>
+        <li id="tea">AllNews</li>
         <li><a href="/">Home</a></li>
         <li><a href="#contact">Contact</a></li>
         <li><a href="#about">About</a></li>

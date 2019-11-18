@@ -74,8 +74,8 @@
                         top: 0;
                 }
 
-                li {
-                        float: left;
+                li a{
+                        float: right;
                 }
 
                 li a {
@@ -103,7 +103,6 @@
                         color: white;
                         font-family: 'Niconne', cursive;
                         transform: translate(-10%);
-                        font-family: 'Philosopher', sans-serif;
                         font-size: 28px;
                 }
 
@@ -117,7 +116,7 @@
 <body>
 
         <ul>
-                <li style="color: white; font-size: 22px; font-family: 'Philosopher', sans-serif;"><a>AllNews</a></li>
+                <li style="color: white; font-size: 26px;  font-family: 'PT Serif Caption', serif;">AllNews</li>
                 <li><a href="/">Home</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#about">About</a></li>
@@ -151,7 +150,7 @@
                                                 <div class="col-md-4">
                                                         <div class="card">
                                                                 <div class="card-body">
-                                                                        <h3>{{headline.name}}</h3>
+                                                                        <h3>{{headline.author}}</h3>
                                                                         <b>{{headline.title}}</b>
                                                                         <img src="{{headline.urlToImage}}"
                                                                                 class="img-responsive" alt="poster"
@@ -172,6 +171,10 @@
                                         </div>
                                 </div>
 
+                        </div>
+                        <div id="about">
+                                <h1>About Us</h1>
+                                <p>The AllNews application is an application</p>
                         </div>
                 </div>
 
