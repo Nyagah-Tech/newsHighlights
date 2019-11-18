@@ -11,7 +11,8 @@ The language used to develop this application is the HTML,CSS,BOOTSTRAP,FLASK,PY
 ## Support and contact details
  kindly reach out our support team at Allnew@gmail.com for any technical problem or any idea we can implementresult you need.
 ## BDD(Behaviour Driven Development)
- the user is expected to choose the favourite 
+ the user is expected to choose the favourite news source he or she likes..
+ .the application  navigates  the user to the articles associated  with the specific author
 ### License
 
 Copyright (c)2019 
