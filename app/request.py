@@ -1,4 +1,4 @@
-from app import app
+
 import urllib.request,json
 from .models import Article
 from .models import NewSrc
@@ -18,7 +18,7 @@ top_url = None
 
 def configure_request(app):
     global api_key,base_url,articles_url,top_url
-    api_key = app.config['NEWS_API_KEY']
+    api_key = '7d0b03319613490b9fb6cfd853e978c3'
     base_url = app.config['NEWS_API_BASE_URL']
     articles_url = app.config['NEWS_ARTICLES_API']
     top_url = app.config['TOP_URL']
@@ -65,7 +65,7 @@ def process_articles(articleList):
         content = article.get('content')
         url = article.get('url')
 
-        article_object = NewArticle(name,author,title,urlToImage,description,publishedAt,content,url)
+        article_object = Article(name,author,title,urlToImage,description,publishedAt,content,url)
         articles_results.append(article_object)
     
     return articles_results
